@@ -9,7 +9,7 @@ useEffect(() => {
     });
 }, []);
     if (!dogpic) return <p>Loading...</p>
-return <img alt="A Random Dog." src= {dogpic} />
+return <img alt="A Random Dog." src={dogpic}/>
 // Use the useEffect hook in the App component. 
     //Inside the callback for useEffect, send a fetch request to , a free API that returns a random image of a dog.
 // Display a <p> tag with the text of "Loading..." when the component is first rendered
