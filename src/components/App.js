@@ -1,16 +1,14 @@
 import React, {useState, useEffect} from "react";
 function App() {
-    const [dogpic, setDogPic] = useState(); 
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [dogpic, setDogPic] = useState(null); 
 useEffect(() => {
     fetch("https://dog.ceo/api/breeds/image/random")
     .then((response) => response.json())
     .then((data)=> {
         setDogPic(data.message)
-        setIsLoaded(true);
     });
 }, []);
-if (!isLoaded) return <p>Loading...</p>
+    if (!dogpic) return <p>Loading...</p>
 return <img alt="A Random Dog." src= {dogpic} />
 // Use the useEffect hook in the App component. 
     //Inside the callback for useEffect, send a fetch request to , a free API that returns a random image of a dog.
